@@ -103,29 +103,27 @@ Cloudflare Pages + D1 and Supabase Auth on free plans — no server to manage, n
 The website is static files on Cloudflare Pages. A small API on **Pages Functions** checks the Supabase login token and reads and writes **D1** (SQLite). Each device keeps a full local copy, so the app opens instantly and keeps working offline.
 
 ```mermaid
-flowchart LR
-    subgraph Device["📱 Phone / 💻 PC"]
-        UI["ForgeFlow app<br/>index.html"]
-        Local[("Local copy<br/>localStorage + IndexedDB")]
-        UI <--> Local
-    end
+flowchart TB
+    UI["📱 💻 <b>ForgeFlow app</b> on each device<br/>local copy in localStorage + IndexedDB"]
 
-    subgraph CF["☁️ Cloudflare (free plan)"]
-        Pages["Pages<br/>static website"]
-        API["Pages Functions<br/>/api/*"]
-        D1[("D1 database<br/>shops · team · bills · price lists")]
+    subgraph CF["☁️ Cloudflare — free plan"]
+        direction LR
+        Pages["<b>Pages</b><br/>static website"]
+        API["<b>Pages Functions</b><br/>/api/*"]
+        D1[("<b>D1</b><br/>shops · team · bills<br/>price lists")]
         API <--> D1
     end
 
-    subgraph SB["🔐 Supabase (free plan)"]
-        Auth["Auth<br/>email + password"]
-        Old[("Original site's database<br/>read once to move a shop")]
+    subgraph SB["🔐 Supabase — free plan"]
+        direction LR
+        Auth["<b>Auth</b><br/>email + password"]
+        Old[("Original site's DB<br/>read once to move a shop")]
     end
 
-    Pages -- "HTML, JS" --> UI
+    Pages -- "website files" --> UI
+    UI -- "sync, with login token" --> API
     UI -- "sign in" --> Auth
-    UI -- "sync with login token" --> API
-    API -. "public signing keys" .-> Auth
+    API -. "checks token with<br/>public signing keys" .-> Auth
     UI -. "first sign-in only" .-> Old
 ```
 
