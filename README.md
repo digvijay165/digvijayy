@@ -1,240 +1,264 @@
 <div align="center">
 
-# 🧾 ForgeFlow: Workshop Billing (Cloudflare edition)
+<img src="public/icon.svg" width="72" alt="ForgeFlow logo">
 
-### *Fast, simple GST billing for machine-parts workshops.*
+# ForgeFlow — Workshop Billing
 
-A browser-based billing app where each shop **uploads its own MRP price list**. Type a part number, press Enter, and the MRP and GST fill in automatically. Stock, purchases, expenses, GST reports, staff logins and cloud sync are built in.
+### Fast GST billing for machine-parts workshops, running on Cloudflare's edge.
 
-[![Live App](https://img.shields.io/badge/🚀_Live_App-Open_ForgeFlow-1e5c45?style=for-the-badge)](https://digvijayy.pages.dev/)
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![IndexedDB](https://img.shields.io/badge/Storage-IndexedDB-0f172a?style=flat-square)
-![Cloudflare](https://img.shields.io/badge/Hosted_on-Cloudflare_Pages_+_D1-F38020?style=flat-square&logo=cloudflare&logoColor=white)
-![No Install](https://img.shields.io/badge/Install-None_Required-success?style=flat-square)
-
-**[🌐 Live App](https://digvijayy.pages.dev/)** · **[🐛 Report Bug](https://github.com/digvijay165/digvijayy/issues)** · **[✨ Request Feature](https://github.com/digvijay165/digvijayy/issues)**
+Type a part number, press <kbd>Enter</kbd>, and the MRP and GST fill in from your own price list.<br>
+Bills, stock, purchases, expenses, GST reports and staff logins — on every phone and computer in the shop.
 
 <br>
 
-<a href="https://digvijayy.pages.dev/">
-  <img src="public/forgeflow-screenshot.png" alt="ForgeFlow dashboard" width="100%">
-</a>
+[![Open the app](https://img.shields.io/badge/Open_the_app-digvijayy.pages.dev-1e5c45?style=for-the-badge&logo=googlechrome&logoColor=white)](https://digvijayy.pages.dev/)
+
+<br>
+
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=flat-square&logo=cloudflarepages&logoColor=white)](https://pages.cloudflare.com/)
+[![Cloudflare D1](https://img.shields.io/badge/Cloudflare_D1-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/d1/)
+[![Supabase Auth](https://img.shields.io/badge/Supabase_Auth-3FCF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com/auth)
+[![JavaScript](https://img.shields.io/badge/Vanilla_JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](#-tech-stack)
+[![PWA](https://img.shields.io/badge/Works_offline-PWA-5A0FC8?style=flat-square&logo=pwa&logoColor=white)](#-tech-stack)
+[![Tests](https://img.shields.io/badge/API_tests-8_passing-2ea44f?style=flat-square&logo=nodedotjs&logoColor=white)](test/api.test.mjs)
+[![Cost](https://img.shields.io/badge/Hosting_cost-₹0-2ea44f?style=flat-square)](#-free-plan-capacity)
+
+<br>
+
+[**Live app**](https://digvijayy.pages.dev/) · [**Deploy your own**](SETUP.md) · [**Report a bug**](https://github.com/digvijay165/digvijayy/issues) · [**Original edition**](https://github.com/digvijay165/ForgeFlow-Workshop-Billing)
+
+<br>
+
+<a href="https://digvijayy.pages.dev/"><img src="public/forgeflow-screenshot.png" alt="ForgeFlow dashboard: price checker, money to collect, recent bills and a 6-month billing chart" width="100%"></a>
 
 </div>
 
----
+<br>
 
-## 📖 About
+## ✨ Highlights
 
-**ForgeFlow** is billing software built for a real machine-parts workshop. It replaces handwritten bills and price-list lookups with a fast, clean web app. It works on its own in the browser with no sign-up, or with **cloud sync and staff logins** so the whole shop shares one set of bills across phones and computers.
+<table>
+<tr>
+<td width="33%" valign="top">
 
-This is the **Cloudflare edition** of [ForgeFlow-Workshop-Billing](https://github.com/digvijay165/ForgeFlow-Workshop-Billing): shop data lives in **Cloudflare D1** (5 GB free) behind a small API on **Cloudflare Pages Functions**, while logins still use **Supabase Auth**, so the same accounts work on both sites. An owner's shop moves over automatically the first time they sign in here.
+### ⚡ Billing in seconds
+Search 60,000+ parts by number or name, press <kbd>Enter</kbd> to add them. MRP and GST fill in by themselves; repeat parts bump the quantity.
 
-It reads your company's **MRP Excel list** (kept private to your shop), creates proper **GST invoices**, remembers customers, and can share bills on **WhatsApp** in one click.
+</td>
+<td width="33%" valign="top">
 
-> 🔗 **Try it live:** [digvijayy.pages.dev](https://digvijayy.pages.dev/)
+### 🧾 Proper GST invoices
+GST-inclusive MRP, CGST / SGST / IGST split, round-off, amount in words, UPI QR for the balance, print or PDF.
 
----
+</td>
+<td width="33%" valign="top">
 
-## ✨ Features
+### 👷 Owner + staff
+Staff make bills and take payments. Only the owner can delete, see reports and expenses, or change settings.
 
-### ⚡ Billing
-| Feature | Description |
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+### 📴 Works offline
+Everything is saved on the device first and synced when the internet is back. Installable on a phone like an app.
+
+</td>
+<td valign="top">
+
+### 📊 Excel everywhere
+Upload MRP lists from `.xlsx`, back up to Excel, and auto-save every bill to an Excel file (or a OneDrive link).
+
+</td>
+<td valign="top">
+
+### 💸 Free to run
+Cloudflare Pages + D1 and Supabase Auth on free plans — no server to manage, no card needed.
+
+</td>
+</tr>
+</table>
+
+<details>
+<summary><b>See every feature</b></summary>
+
+<br>
+
+| Area | What you get |
 | --- | --- |
-| 🔍 **Instant part lookup** | Search your uploaded price list by part number or description right from the Home page |
-| 📚 **Multiple price lists** | Keep one MRP list per company or brand; search, replace, rename or remove each one |
-| ⌨️ **Type & Enter billing** | Enter a part number and the MRP and GST rate fill in automatically |
-| ➕ **Smart quantities** | Adding the same part again increases its quantity |
-| 🔧 **Labour & extras** | Add labour lines, discounts, and notes to any bill |
-| 👥 **Customer memory** | Past customers' details fill in as you type their name |
-| 📝 **Estimates / quotations** | Make an estimate, then convert it to a bill in one click |
-| 💵 **Part payments** | Record advances and part payments; bills show received and balance due |
-| 📲 **UPI QR on bills** | Every unpaid bill shows a scan-to-pay QR for the exact balance |
-| 📋 **Copy a bill** | Start a new bill with the same customer and items |
+| **Billing** | Instant part lookup across several price lists · type-and-Enter lines · labour and discounts · customer memory · estimates that convert to bills · part payments with balance due · copy a bill |
+| **GST** | MRP treated as tax-inclusive · CGST/SGST or IGST · GST breakup by rate · round-off and amount in words · print / Save as PDF |
+| **Stock & money** | Stock falls with bills and rises with purchases · low-stock alerts · stock counts · supplier purchases with input GST · expenses by category |
+| **Reports** *(owner)* | GST summary · GSTR-1 helpers (B2B list, B2C by rate) · day-by-day sales and collections · rough profit |
+| **Team** | Email/password login · owner invites staff by email · staff limited to bills, stock, purchases and saved items |
+| **Sharing & data** | WhatsApp and email summaries · CSV export · Excel backup and restore · auto-save to an Excel file or a OneDrive link |
 
-### 🧾 GST Invoices
-| Feature | Description |
+</details>
+
+<br>
+
+## 🏗️ Architecture
+
+The website is static files on Cloudflare Pages. A small API on **Pages Functions** checks the Supabase login token and reads and writes **D1** (SQLite). Each device keeps a full local copy, so the app opens instantly and keeps working offline.
+
+```mermaid
+flowchart LR
+    subgraph Device["📱 Phone / 💻 PC"]
+        UI["ForgeFlow app<br/>index.html"]
+        Local[("Local copy<br/>localStorage + IndexedDB")]
+        UI <--> Local
+    end
+
+    subgraph CF["☁️ Cloudflare (free plan)"]
+        Pages["Pages<br/>static website"]
+        API["Pages Functions<br/>/api/*"]
+        D1[("D1 database<br/>shops · team · bills · price lists")]
+        API <--> D1
+    end
+
+    subgraph SB["🔐 Supabase (free plan)"]
+        Auth["Auth<br/>email + password"]
+        Old[("Original site's database<br/>read once to move a shop")]
+    end
+
+    Pages -- "HTML, JS" --> UI
+    UI -- "sign in" --> Auth
+    UI -- "sync with login token" --> API
+    API -. "public signing keys" .-> Auth
+    UI -. "first sign-in only" .-> Old
+```
+
+### How a bill syncs
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant A as Counter PC
+    participant API as /api/sync
+    participant DB as D1
+    participant B as Owner's phone
+
+    A->>A: Save bill (stored locally first)
+    Note over A: ~2 s after the last edit
+    A->>API: changes + last revision seen
+    API->>API: Verify Supabase token, check owner/staff rules
+    API->>DB: Write the batch in one statement (new revision)
+    API-->>A: Everyone else's newer changes
+    Note over B: On open, on returning to the app,<br/>or every 3 minutes while on screen
+    B->>API: Last revision seen
+    API-->>B: The new bill
+```
+
+One request both sends and receives, and devices only sync while the app is on screen — that is what keeps a busy shop well inside Cloudflare's free daily limit.
+
+<br>
+
+## 📈 Free plan capacity
+
+| Resource | Free allowance | What it means for a workshop |
+| --- | --- | --- |
+| API requests | 100,000 / day | ~2 per app open + 1 every 3 min on screen → **roughly 400–500 devices used all day** |
+| D1 storage | 500 MB per database, 5 GB per account | Bills are ~1–2 KB; a 65,000-part MRP list is **~0.9 MB** zipped |
+| Website traffic | Unlimited | Static files don't count as requests |
+| Logins | 50,000 monthly users | Supabase Auth free plan |
+
+If the daily request limit is ever reached, the app keeps working offline and syncs again after midnight UTC (5:30 AM IST).
+
+<br>
+
+## 🛠️ Tech stack
+
+| Layer | Built with |
 | --- | --- |
-| 💰 **GST-inclusive MRP** | MRP treated as tax-inclusive by default, with taxable value calculated |
-| 🏛️ **CGST / SGST / IGST** | Correct tax split for intra-state and inter-state bills |
-| 🔢 **Round off & amount in words** | Printed bills show round off and the total in words |
-| 🖨️ **Print / PDF** | Print bills or save them as PDF, with a GST breakup by rate |
+| App | HTML5, CSS3, vanilla JavaScript — one page, no framework, no build step |
+| On the device | `localStorage` for bills, IndexedDB for price lists, a service worker for offline use |
+| Excel | Native `.xlsx` reader and writer using `DecompressionStream` / a hand-written zip — no libraries |
+| API | Cloudflare Pages Functions (`functions/api/[[path]].js`), Supabase JWT verified with WebCrypto against the project's JWKS |
+| Database | Cloudflare D1 (SQLite): per-shop revision counter for sync, gzip-compressed price-list chunks |
+| Login | Supabase Auth (email + password, password reset) |
+| Tests | Node's built-in test runner against a local D1 (`wrangler pages dev`) |
 
-### 📦 Stock, Purchases & Expenses
-| Feature | Description |
-| --- | --- |
-| 📦 **Stock tracking** | Stock goes down with every bill and up with every purchase, with low-stock alerts |
-| 🧮 **Stock count** | Count a shelf and correct the number in seconds |
-| 🚚 **Purchases** | Record supplier bills; GST paid counts as input credit in reports |
-| 💸 **Expenses** | Rent, salary, electricity and more, by category |
+<br>
 
-### 📊 Reports
-| Feature | Description |
-| --- | --- |
-| 🧾 **GST summary** | Output GST by rate (CGST / SGST / IGST), input credit, and net GST |
-| 🏢 **GSTR-1 helpers** | B2B bill list and B2C summary by rate, exportable to Excel |
-| 📅 **Day by day** | Sales and money collected for each day |
-| 💹 **Profit** | Rough profit: sales − purchases − expenses for any period |
-
-### ☁️ Cloud & Team (optional)
-| Feature | Description |
-| --- | --- |
-| 🔐 **Login** | Email and password sign-in, with password reset |
-| 👷 **Staff accounts** | Staff make bills and take payments, but can't delete, see reports, or change settings |
-| 🔄 **Sync** | Bills made on one device appear on the others within a few minutes (right away after a change on that device) |
-| 📴 **Works offline** | Installable on your phone; changes sync when you're back online |
-
-### 📤 Sharing & Data
-| Feature | Description |
-| --- | --- |
-| 💬 **WhatsApp & Email** | Share a bill summary in one click |
-| 📊 **CSV export** | Export bills to CSV for accounts |
-| 📥 **Excel price-list upload** | Upload next month's MRP list (`.xlsx` / `.csv`); it's read directly in the browser |
-| 💾 **Backup & restore** | Move all bills and settings to another device |
-| 📈 **Dashboard** | Pending and collected amounts, bill count, customers, and a 6-month billing chart |
-
----
-
-## 🗂️ App Sections
-
-| Section | What it does |
-| --- | --- |
-| 🏠 **Home** | Price checker, key stats, recent bills, and billing chart |
-| 🧾 **Bills** | Bills and estimates: create, edit, print, take payments |
-| ⚙️ **Price list & parts** | Built-in MRP list, Excel uploads, and labour charges |
-| 📦 **Stock** | Parts on your shelves, low-stock alerts, stock counts |
-| 🚚 **Purchases** | Supplier bills; raise stock automatically |
-| 💸 **Expenses** | Shop running costs *(owner only)* |
-| 👥 **Customers** | Customer list built automatically from your bills |
-| 📊 **Reports** | Sales, GST, collections and profit *(owner only)* |
-| 🏢 **Business settings** | Shop details, GST, UPI, team, and backup / restore *(owner only)* |
-
----
-
-## 🛠️ Tech Stack
-
-- **HTML5, CSS3, Vanilla JavaScript**: a single-page app with no frameworks
-- **localStorage / IndexedDB**: the local copy of bills and the uploaded price list, so the app works offline
-- **Supabase Auth**: email/password login (tokens are verified by the API with Supabase's public keys)
-- **Cloudflare Pages Functions + D1**: the API and SQLite database for shops, staff roles, bills and price lists
-- **gzip in the browser**: price lists are compressed before upload (`CompressionStream`)
-- **Service worker**: offline use and install-to-home-screen
-- **Native Excel reader**: parses `.xlsx` in the browser using `DecompressionStream`, with no external libraries
-- **Cloudflare Pages**: hosting, with unlimited static traffic
-
----
-
-## 📁 Project Structure
+## 📁 Project structure
 
 ```
 digvijayy/
-├── public/                    # The website
-│   ├── index.html             # The app (UI, styles, and logic)
-│   ├── config.js              # Supabase login keys and API address
-│   ├── js/cloud.js            # Login, staff roles, and sync with the API
-│   └── sw.js, manifest.json   # Offline support and phone install
-├── functions/api/[[path]].js  # The API (Cloudflare Pages Functions)
-├── schema.sql                 # D1 database tables
-├── wrangler.toml              # Cloudflare project settings
-├── test/api.test.mjs          # API tests against a local D1 (npm test)
-├── SETUP.md                   # How to deploy to Cloudflare
-└── README.md
+├── public/                     # The website (deployed as-is)
+│   ├── index.html              # The whole app: UI, styles and logic
+│   ├── js/cloud.js             # Login, roles, sync, price-list upload, moving a shop
+│   ├── config.js               # Supabase login keys and API address
+│   ├── sw.js · manifest.json   # Offline support and phone install
+│   └── icon.svg
+├── functions/api/[[path]].js   # The API (Cloudflare Pages Functions)
+├── schema.sql                  # D1 tables
+├── wrangler.toml               # Cloudflare project + D1 binding
+├── test/api.test.mjs           # End-to-end API tests
+└── SETUP.md                    # Deploy your own copy
 ```
 
----
+<br>
 
-## 🚀 Getting Started
+## 🚀 Getting started
 
-### Use it online
-Just open the **[live app](https://digvijayy.pages.dev/)**. Nothing to install.
+**Just use it:** open **[digvijayy.pages.dev](https://digvijayy.pages.dev/)** and create an account. Shop owners from the [original edition](https://github.com/digvijay165/ForgeFlow-Workshop-Billing) simply sign in — their shop, team, bills and price lists move over automatically the first time.
 
-### Run locally
+**Run it locally**
 
 ```bash
 git clone https://github.com/digvijay165/digvijayy.git
 cd digvijayy
 npm install
-npm run db:local
-npm run dev
+npm run db:local      # create the tables in a local D1
+npm run dev           # http://localhost:8788
 ```
 
-Then open `http://localhost:8788`. Run the API tests with `npm test`.
+**Run the tests**
 
----
+```bash
+npm test
+```
 
-## 🔄 Updating the Price List
+They start the API against a throwaway local database with a test signing key — nothing touches Cloudflare or Supabase.
 
-No price list is built in. The shop owner goes to **Price list & parts** and uploads the MRP Excel file (columns like *Material, Desc, MRP, GST rate*). With cloud sync on, the list belongs to that shop only: staff get it on every device, and other shops can't see it. Upload again whenever a new list arrives; old bills keep their prices.
+**Deploy your own** — about 10 minutes, free, no card: see **[SETUP.md](SETUP.md)**. After that, publishing is one command:
 
----
+```bash
+npm run deploy
+```
 
-## ☁️ Cloud Sync & Staff Logins
+<br>
 
-To deploy your own copy, follow **[SETUP.md](SETUP.md)** (about 10 minutes, free Cloudflare plan, no card).
+## 🔒 Security & privacy
 
-**Free plan limits:** 5 GB of database (500 MB per database) and **100,000 API requests a day**. A device uses about 2 requests when the app opens and 1 every 3 minutes while it is on screen, so that covers roughly 400–500 devices used all day. If the daily limit is reached, the app keeps working offline and syncs after midnight UTC.
+- Every API request carries the Supabase login token; the API checks its signature, expiry and project before touching any data.
+- A shop's bills and price lists are only readable by members of that shop. Staff cannot delete records or touch settings and expenses — enforced on the server, not just hidden in the app.
+- Price lists are read in your browser and stored per shop; other shops can never see them.
+- **Business settings → Download backup** gives you a full Excel copy of everything at any time.
 
-## 🔒 Data & Privacy
-
-- **Local mode** (default): bills, customers, and settings stay **only in the browser** on the device you use
-- **Cloud mode**: data is stored in **your own** Cloudflare D1 database; the API only lets signed-in members of a shop read it, and staff can't delete or change settings
-- Uploaded price lists are read **locally** in the browser. In cloud mode each shop's list (part numbers and MRPs) is private to that shop; other shops can't read it
-- Use **Business settings → Download backup** for a file copy of everything
-
-> ⚠️ In local mode, clearing browser data deletes your bills. The app reminds you to back up every 7 days.
-
----
-
-## 🌐 Deployment
-
-| Setting | Value |
-| --- | --- |
-| Live URL | [digvijayy.pages.dev](https://digvijayy.pages.dev/) |
-| Host | Cloudflare Pages (+ D1) |
-| Deploy | `npm run deploy` |
-| Build command | *None* |
-
----
+<br>
 
 ## 🗺️ Roadmap
 
-- [x] Cloud sync across devices
-- [x] Multi-user access for staff
-- [x] Stock / inventory tracking
-- [x] GST reports (GSTR-1 helpers)
-- [x] Installable offline app (PWA)
+- [x] Cloud sync across devices and staff accounts
+- [x] Stock, purchases, expenses and GST reports
+- [x] Excel backup, restore and auto-save
+- [x] Cloudflare Pages + D1 backend
+- [ ] One-time invite codes for staff
 - [ ] HSN codes on bills
-- [ ] Send bill PDF directly on WhatsApp
+- [ ] Send the bill PDF straight to WhatsApp
 
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-1. Fork the project
-2. Create your branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m "Add AmazingFeature"`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
+<br>
 
 ## 👤 Author
 
-**Digvijay Singh**
-- GitHub: [@digvijay165](https://github.com/digvijay165)
-- Portfolio: [digvijay165.github.io/portfolio](https://digvijay165.github.io/portfolio/)
-
----
+**Digvijay Singh** · [@digvijay165](https://github.com/digvijay165) · [Portfolio](https://digvijay165.github.io/portfolio/)
 
 <div align="center">
 
-⭐ **If this project helped you, give it a star!** ⭐
+<br>
 
-Made with ❤️ by [Digvijay Singh](https://github.com/digvijay165)
+If ForgeFlow helps your workshop, consider giving it a ⭐
 
 </div>
