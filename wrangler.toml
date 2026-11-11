@@ -11,4 +11,4 @@ SUPABASE_ANON_KEY = "sb_publishable_wOhvEwVlyimxtkHRh4qcGw_P7EhUjL-"
 [[d1_databases]]
 binding = "DB"
 database_name = "forgeflow"
-database_id = "00000000-0000-0000-0000-000000000000" # replaced by `npm run setup` (see SETUP.md)
+database_id = "2613077c-0c49-4624-b89b-c4c260f5fc38"
