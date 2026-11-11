@@ -1,0 +1,14 @@
+# Cloudflare Pages project: the website in public/ plus the API in functions/.
+name = "digvijayy"
+pages_build_output_dir = "public"
+compatibility_date = "2025-09-01"
+
+# Public values (the same ones as public/config.js), used by the API to check logins.
+[vars]
+SUPABASE_URL = "https://zwxhlxjgsdijzqpsviiv.supabase.co"
+SUPABASE_ANON_KEY = "sb_publishable_wOhvEwVlyimxtkHRh4qcGw_P7EhUjL-"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "forgeflow"
+database_id = "00000000-0000-0000-0000-000000000000" # replaced by `npm run setup` (see SETUP.md)

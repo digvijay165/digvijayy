@@ -1,0 +1,13 @@
+{
+  "name": "ForgeFlow — Workshop billing",
+  "short_name": "ForgeFlow",
+  "description": "Billing, stock, purchases and GST reports for machine shops",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7f4",
+  "theme_color": "#142823",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
