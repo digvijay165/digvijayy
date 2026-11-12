@@ -78,7 +78,12 @@ Watch usage in the Cloudflare dashboard under **Workers & Pages → digvijayy �
 
 ## Save bills to OneDrive (optional)
 
-Same as the original site: add a Microsoft app ID to `onedriveClientId` in [`public/config.js`](public/config.js).
+**Easiest, no setup:** on a computer with the OneDrive app, open the site in Chrome or Edge, go to
+**Business settings → Your data → ☁ Save bills to a OneDrive Excel link → Choose Excel file**, and save the file
+inside your OneDrive folder. Every saved bill rewrites that file and OneDrive uploads it. This works per computer
+and only while ForgeFlow is used there; phones download an Excel copy instead.
+
+**Online link (works from any device):** same as the original site: add a Microsoft app ID to `onedriveClientId` in [`public/config.js`](public/config.js).
 Register the app at [portal.azure.com](https://portal.azure.com) → **App registrations** with the redirect URIs
 `https://digvijayy.pages.dev/` and `https://digvijayy.pages.dev/index.html` (type *Single-page application*) and the
 Microsoft Graph delegated permission **Files.ReadWrite.All**. Personal Microsoft accounts need an Azure directory
