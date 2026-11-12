@@ -1,7 +1,7 @@
 // Lets the app open without internet and be installed on a phone.
 // Own files: try the network first (so updates show up), fall back to the saved copy.
 // Libraries from the CDN: use the saved copy (their URLs include a fixed version).
-const CACHE = 'forgeflow-cf-v1';
+const CACHE = 'forgeflow-cf-v2';
 const SHELL = ['./', './index.html', './config.js', './js/cloud.js', './manifest.json', './icon.svg'];
 const CDN = ['cdnjs.cloudflare.com', 'cdn.jsdelivr.net'];
 
